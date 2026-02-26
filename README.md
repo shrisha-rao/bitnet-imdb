@@ -1,6 +1,6 @@
 # BitNet Fine-Tuning on IMDB
 
-This repository fine-tunes a small pretrained transformer (`bert-tiny`) into a **BitNet-style model with ternary weights** for sentiment classification on the IMDB dataset. It replaces all linear layers with custom `BitLinear` layers that quantize weights to `{-1, 0, 1}` during forward passes, using straight-through estimator for backpropagation.
+This repository fine-tunes a small pretrained transformer (`DistilBERT`) into a **BitNet-style model with ternary weights** for sentiment classification on the IMDB dataset. It replaces all linear layers with custom `BitLinear` layers that quantize weights to `{-1, 0, 1}` during forward passes, using straight-through estimator for backpropagation.
 
 ## Why BitNet?
 - Extreme weight quantization (1.58-bit) reduces memory footprint.
