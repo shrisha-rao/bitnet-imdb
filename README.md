@@ -7,8 +7,8 @@ This repository fine-tunes a small pretrained transformer (`DistilBERT`) into a 
 
 | Model | Parameter Count | Estimated Memory (MB) |
 |-------|----------------|----------------------|
-| DistilBERT (FP32) | 67,000,000 | 256 |
-| BitNet (ternary) | 67,000,000 | 16 |
+| DistilBERT (FP32) | 67M | 67M × 4 bytes (per param) = 256 |
+| BitNet (ternary) | 67M | 67M × 0.25 bytes (per param) = 16 |
 
 Compression ratio: ~16x
 
