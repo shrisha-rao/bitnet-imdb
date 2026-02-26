@@ -6,9 +6,8 @@ This repository fine-tunes a small pretrained transformer (`bert-tiny`) into a *
 - Extreme weight quantization (1.58-bit) reduces memory footprint.
 
 ## Quickstart (Colab)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/bitnet-imdb/blob/main/notebooks/bitnet_imdb_colab.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shrisha-rao/bitnet-imdb/blob/main/notebooks/bitnet_imdb_colab.ipynb)
 
-Run the notebook to fine-tune the model in minutes (free GPU recommended).
 
 ## Local Setup
 ```bash
@@ -16,3 +15,15 @@ git clone https://github.com/yourusername/bitnet-imdb.git
 cd bitnet-imdb
 pip install -r requirements.txt
 python train.py --max_samples 5000   # quick test
+
+
+
+# Files
+
+    src/bitlinear.py – Implements BitLinear, a ternary weight layer with STE.
+
+    src/utils.py – Function to recursively replace nn.Linear with BitLinear.
+
+    src/train.py – Training script (uses IMDB dataset, Hugging Face Trainer).
+
+    notebooks/bitnet_imdb_colab.ipynb – Same logic in a Colab-friendly format.
