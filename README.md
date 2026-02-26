@@ -12,6 +12,17 @@ This repository fine-tunes a small pretrained transformer (`DistilBERT`) into a 
 
 Compression ratio: ~16x
 
+
+```mermaid
+flowchart TD
+    A["Your Fine-tuned Model<br>(HF Format, FP32 weights)"] --> B["Step 1: Model Preparation<br>(Convert to GGUF format)"]
+    
+    B --> C["Step 2: BitNet.cpp Inference<br>(Uses optimized kernels: TL2 for x86, TL1 for ARM)"]
+    
+    C --> D["Output: Deployed Model<br>(16x memory reduction, 2-6x faster CPU inference)"]
+    
+```
+
 ## Quickstart (Colab)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shrisha-rao/bitnet-imdb/blob/main/notebooks/bitnet_imdb_colab.ipynb)
 
