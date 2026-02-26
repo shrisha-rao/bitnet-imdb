@@ -1,0 +1,29 @@
+# BitNet Fine-Tuning on IMDB
+
+This repository fine-tunes a small pretrained transformer (`bert-tiny`) into a **BitNet-style model with ternary weights** for sentiment classification on the IMDB dataset. It replaces all linear layers with custom `BitLinear` layers that quantize weights to `{-1, 0, 1}` during forward passes, using straight-through estimator for backpropagation.
+
+## Why BitNet?
+- Extreme weight quantization (1.58-bit) reduces memory footprint.
+
+## Quickstart (Colab)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shrisha-rao/bitnet-imdb/blob/main/notebooks/bitnet_imdb_colab.ipynb)
+
+
+## Local Setup
+```bash
+git clone https://github.com/yourusername/bitnet-imdb.git
+cd bitnet-imdb
+pip install -r requirements.txt
+python train.py --max_samples 5000   # quick test
+
+
+
+# Files
+
+    src/bitlinear.py – Implements BitLinear, a ternary weight layer with STE.
+
+    src/utils.py – Function to recursively replace nn.Linear with BitLinear.
+
+    src/train.py – Training script (uses IMDB dataset, Hugging Face Trainer).
+
+    notebooks/bitnet_imdb_colab.ipynb – Same logic in a Colab-friendly format.
