@@ -5,6 +5,13 @@ This repository fine-tunes a small pretrained transformer (`bert-tiny`) into a *
 ## Why BitNet?
 - Extreme weight quantization (1.58-bit) reduces memory footprint.
 
+| Model | Parameter Count | Estimated Memory (MB) |
+|-------|----------------|----------------------|
+| DistilBERT (FP32) | 67,000,000 | 256 |
+| BitNet (ternary) | 67,000,000 | 16 |
+
+Compression ratio: ~16x
+
 ## Quickstart (Colab)
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shrisha-rao/bitnet-imdb/blob/main/notebooks/bitnet_imdb_colab.ipynb)
 
