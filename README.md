@@ -12,6 +12,21 @@ This repository fine-tunes a small pretrained transformer (`DistilBERT`) into a 
 
 Compression ratio: ~16x
 
+
+	
+## Expected Performance Gains	
+| Metric | Expected Improvement | Notes |
+|--------|----------------------|-------|
+| Model Memory Footprint | ~16x reduction | Your 268 MB model drops to ~16 MB. |
+| Inference Speed | 2.37x - 6.17x faster (on x86 CPUs) | Realized through optimized kernels. |
+| Energy Consumption | 71.9% - 82.2% reduction (on x86 CPUs) | Less memory movement and simpler arithmetic. |
+	
+
+
+## Quickstart (Colab)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shrisha-rao/bitnet-imdb/blob/main/notebooks/bitnet_imdb_colab.ipynb)
+
+
 # Deployment 
 
 ```mermaid
@@ -60,18 +75,6 @@ use the run_inference.py script to prompt the model. This will load the GGUF fil
 	```bash
 	python run_inference.py -m /path/to/your/model.gguf -p "Prompt Here"
 	```
-	
-## Expected Performance Gains	
-| Metric | Expected Improvement | Notes |
-|--------|----------------------|-------|
-| Model Memory Footprint | ~16x reduction | Your 268 MB model drops to ~16 MB. |
-| Inference Speed | 2.37x - 6.17x faster (on x86 CPUs) | Realized through optimized kernels. |
-| Energy Consumption | 71.9% - 82.2% reduction (on x86 CPUs) | Less memory movement and simpler arithmetic. |
-	
-
-
-## Quickstart (Colab)
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/shrisha-rao/bitnet-imdb/blob/main/notebooks/bitnet_imdb_colab.ipynb)
 
 
 ## Local Setup
